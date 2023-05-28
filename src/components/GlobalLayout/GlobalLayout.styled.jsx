@@ -9,7 +9,7 @@ export const Container = styled.div`
 
 export const Main = styled.main`
   flex: 1;
-  padding: 10px 20px;
+  padding: 0 20px;
 `;
 
 export const FooterContainer = styled.div`
