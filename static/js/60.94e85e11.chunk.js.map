@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/60.94e85e11.chunk.js","mappings":"oJAIA,UAJyB,WACvB,OAAO,8BAAE,oBACV,C","sources":["pages/ShoppingCartPage/ShoppingCartPage.jsx"],"sourcesContent":["const ShoppingCartPage = () => {\n  return <>ShoppingCartPage</>;\n};\n\nexport default ShoppingCartPage;\n"],"names":[],"sourceRoot":""}

@@ -1,13 +1,24 @@
 {
   "files": {
-    "main.css": "/delivery-app-frontend/static/css/main.7acaea2f.css",
-    "main.js": "/delivery-app-frontend/static/js/main.07d3183d.js",
+    "main.css": "/delivery-app-frontend/static/css/main.7ce2a142.css",
+    "main.js": "/delivery-app-frontend/static/js/main.3eb3032f.js",
+    "static/js/664.6d6107ee.chunk.js": "/delivery-app-frontend/static/js/664.6d6107ee.chunk.js",
+    "static/js/974.de3dd236.chunk.js": "/delivery-app-frontend/static/js/974.de3dd236.chunk.js",
+    "static/js/589.e6654bd1.chunk.js": "/delivery-app-frontend/static/js/589.e6654bd1.chunk.js",
+    "static/js/60.94e85e11.chunk.js": "/delivery-app-frontend/static/js/60.94e85e11.chunk.js",
+    "static/js/201.11f9f48f.chunk.js": "/delivery-app-frontend/static/js/201.11f9f48f.chunk.js",
+    "static/media/LilitaOne-Regular.ttf": "/delivery-app-frontend/static/media/LilitaOne-Regular.6f506507b06161b73e85.ttf",
     "index.html": "/delivery-app-frontend/index.html",
-    "main.7acaea2f.css.map": "/delivery-app-frontend/static/css/main.7acaea2f.css.map",
-    "main.07d3183d.js.map": "/delivery-app-frontend/static/js/main.07d3183d.js.map"
+    "main.7ce2a142.css.map": "/delivery-app-frontend/static/css/main.7ce2a142.css.map",
+    "main.3eb3032f.js.map": "/delivery-app-frontend/static/js/main.3eb3032f.js.map",
+    "664.6d6107ee.chunk.js.map": "/delivery-app-frontend/static/js/664.6d6107ee.chunk.js.map",
+    "974.de3dd236.chunk.js.map": "/delivery-app-frontend/static/js/974.de3dd236.chunk.js.map",
+    "589.e6654bd1.chunk.js.map": "/delivery-app-frontend/static/js/589.e6654bd1.chunk.js.map",
+    "60.94e85e11.chunk.js.map": "/delivery-app-frontend/static/js/60.94e85e11.chunk.js.map",
+    "201.11f9f48f.chunk.js.map": "/delivery-app-frontend/static/js/201.11f9f48f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7acaea2f.css",
-    "static/js/main.07d3183d.js"
+    "static/css/main.7ce2a142.css",
+    "static/js/main.3eb3032f.js"
   ]
 }
