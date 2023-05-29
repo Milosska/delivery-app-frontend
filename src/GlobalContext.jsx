@@ -14,7 +14,6 @@ export const GlobalProvider = ({ children }) => {
   const [token, setToken] = useState(
     JSON.parse(localStorage.getItem('refresh_token'))
   );
-  const [productsId, setProductsId] = useState([]);
 
   const logIn = (id, name, email, phone, address, token) => {
     setIsLoggedIn(true);
@@ -50,8 +49,6 @@ export const GlobalProvider = ({ children }) => {
         token,
         logIn,
         logOut,
-        productsId,
-        setProductsId,
       }}
     >
       {children}

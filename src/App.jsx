@@ -27,6 +27,7 @@ const OrdersPage = lazy(() => import('./pages/OrdersPage/OrdersPage'));
 
 export const App = () => {
   const [isRefreshingUser, setIsRefreshingUser] = useState(false);
+  const [productsId, setProductsId] = useState([]);
 
   const { token, logIn } = useGlobal();
 
@@ -55,11 +56,21 @@ export const App = () => {
             <Route path="/" element={<GlobalLayout />}>
               <Route
                 index
-                element={<PrivateRoute component={<RestaurantsPage />} />}
+                element={
+                  <PrivateRoute
+                    component={
+                      <RestaurantsPage setProductsId={setProductsId} />
+                    }
+                  />
+                }
               />
               <Route
                 path="cart"
-                element={<PrivateRoute component={<ShoppingCartPage />} />}
+                element={
+                  <PrivateRoute
+                    component={<ShoppingCartPage productsId={productsId} />}
+                  />
+                }
               />
               <Route
                 path="orders"

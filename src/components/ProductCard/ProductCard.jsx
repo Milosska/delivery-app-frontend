@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { useGlobal } from '../../GlobalContext';
 import {
   Container,
   Figure,
@@ -12,11 +11,9 @@ import {
 
 export const ProductCard = ({
   product: { _id, name, img, cuisine, ingredients, price, type },
-  setCurrentOrder,
-  currentOrder,
+  setProductsId,
 }) => {
   const [isActive, setIsActive] = useState(false);
-  const { productsId, setProductsId } = useGlobal();
 
   const handleClick = () => {
     if (!isActive) {
@@ -27,8 +24,6 @@ export const ProductCard = ({
       setIsActive(false);
     }
   };
-
-  console.log(productsId);
 
   return (
     <Container>

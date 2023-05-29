@@ -8,7 +8,7 @@ import {
   ProductsList,
 } from './RestautantsPage.styled';
 
-const RestaurantsPage = () => {
+const RestaurantsPage = ({ setProductsId }) => {
   const [products, setProducts] = useState([]);
 
   return (
@@ -21,7 +21,7 @@ const RestaurantsPage = () => {
           {products.map(product => {
             return (
               <li key={product._id}>
-                <ProductCard product={product} />
+                <ProductCard product={product} setProductsId={setProductsId} />
               </li>
             );
           })}
