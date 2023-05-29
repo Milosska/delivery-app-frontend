@@ -5,7 +5,7 @@ import {
   ProductsList,
 } from './ShoppingCartPage.styled';
 
-const ShoppingCartPage = ({ productsId }) => {
+const ShoppingCartPage = ({ currentOrder }) => {
   return (
     <Container>
       <SmallColumn></SmallColumn>

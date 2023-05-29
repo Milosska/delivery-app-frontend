@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { GlobalStyles } from './GlobalStyles';
 
 import { lazy, Suspense, useState, useEffect } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import { fetchCurrentUser } from './helpers/fetchAPI';
 import { useGlobal } from './GlobalContext';
@@ -27,25 +27,33 @@ const OrdersPage = lazy(() => import('./pages/OrdersPage/OrdersPage'));
 
 export const App = () => {
   const [isRefreshingUser, setIsRefreshingUser] = useState(false);
-  const [productsId, setProductsId] = useState([]);
+  const [currentOrder, setCurrentOrder] = useState(
+    JSON.parse(localStorage.getItem('current_order')) || []
+  );
+
+  console.log(currentOrder);
 
   const { token, logIn } = useGlobal();
 
   useEffect(() => {
     const refreshUser = async () => {
-      if (!token) {
-        return;
+      if (token) {
+        setIsRefreshingUser(true);
+        const { _id, name, email, phone, address, refresh_token } =
+          await fetchCurrentUser(token);
+        logIn(_id, name, email, phone, address, refresh_token);
+        setIsRefreshingUser(false);
+      } else {
+        return <Navigate to="/login" replace />;
       }
-
-      setIsRefreshingUser(true);
-      const { _id, name, email, phone, address, refresh_token } =
-        await fetchCurrentUser(token);
-      logIn(_id, name, email, phone, address, refresh_token);
-      setIsRefreshingUser(false);
     };
 
     refreshUser();
   }, [token, logIn]);
+
+  useEffect(() => {
+    localStorage.setItem('current_order', JSON.stringify(currentOrder));
+  }, [currentOrder]);
 
   return (
     <>
@@ -59,7 +67,10 @@ export const App = () => {
                 element={
                   <PrivateRoute
                     component={
-                      <RestaurantsPage setProductsId={setProductsId} />
+                      <RestaurantsPage
+                        currentOrder={currentOrder}
+                        setCurrentOrder={setCurrentOrder}
+                      />
                     }
                   />
                 }
@@ -68,7 +79,7 @@ export const App = () => {
                 path="cart"
                 element={
                   <PrivateRoute
-                    component={<ShoppingCartPage productsId={productsId} />}
+                    component={<ShoppingCartPage currentOrder={currentOrder} />}
                   />
                 }
               />

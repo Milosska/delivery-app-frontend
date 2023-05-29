@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import {
   Container,
   Figure,
@@ -9,18 +9,21 @@ import {
   AddBtn,
 } from './ProductCard.styled';
 
-export const ProductCard = ({
-  product: { _id, name, img, cuisine, ingredients, price, type },
-  setProductsId,
-}) => {
+export const ProductCard = ({ product, currentOrder, setCurrentOrder }) => {
   const [isActive, setIsActive] = useState(false);
+  const { _id, name, img, cuisine, ingredients, price, type } = product;
+
+  useEffect(() => {
+    const inCart = currentOrder.find(item => item._id === _id);
+    inCart ? setIsActive(true) : setIsActive(false);
+  }, [currentOrder, _id]);
 
   const handleClick = () => {
     if (!isActive) {
-      setProductsId(prevState => [...prevState, _id]);
+      setCurrentOrder(prevState => [...prevState, product]);
       setIsActive(true);
     } else {
-      setProductsId(prevState => prevState.filter(product => product !== _id));
+      setCurrentOrder(prevState => prevState.filter(item => item._id !== _id));
       setIsActive(false);
     }
   };
@@ -32,6 +35,9 @@ export const ProductCard = ({
         <FigureText>{name}</FigureText>
       </Figure>
       <InfoThumb>
+        <p>
+          <TextLabel>Type:</TextLabel> {type}
+        </p>
         <p>
           <TextLabel>Ingredients: </TextLabel>
           {ingredients.length > 0
