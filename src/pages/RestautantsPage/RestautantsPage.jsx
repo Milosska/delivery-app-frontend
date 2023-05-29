@@ -1,19 +1,34 @@
+import { useState, useEffect } from 'react';
 import { RestaurantsList } from '../../components/RestaurantsList/RestaurantsList';
+import { ProductCard } from '../../components/ProductCard/ProductCard';
 import {
   Container,
-  TinyColumn,
   BigColumn,
   SmallColumn,
+  ProductsList,
 } from './RestautantsPage.styled';
 
+import { useGlobal } from '../../GlobalContext';
+
 const RestaurantsPage = () => {
+  const [products, setProducts] = useState([]);
+
   return (
     <Container>
-      <TinyColumn>
-        <RestaurantsList />
-      </TinyColumn>
-      <BigColumn>Products</BigColumn>
-      <SmallColumn>Current order</SmallColumn>
+      <SmallColumn>
+        <RestaurantsList setProducts={setProducts} />
+      </SmallColumn>
+      <BigColumn>
+        <ProductsList>
+          {products.map(product => {
+            return (
+              <li key={product._id}>
+                <ProductCard product={product} />
+              </li>
+            );
+          })}
+        </ProductsList>
+      </BigColumn>
     </Container>
   );
 };

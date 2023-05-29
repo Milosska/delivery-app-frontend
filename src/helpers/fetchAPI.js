@@ -62,11 +62,22 @@ export const fetchCurrentUser = async userToken => {
   if (!userToken) {
     return;
   }
-  console.log(userToken);
   token.set(userToken);
   try {
     const response = await axios.post(`${BASE_URL}/api/auth/current`);
-    console.log(response.data);
+    return response.data;
+  } catch (e) {
+    if (axios.isCancel(e)) {
+      return;
+    }
+    toast.error(e.message);
+    console.error(e);
+  }
+};
+
+export const fetchProductsByCompany = async company => {
+  try {
+    const response = await axios.get(`${BASE_URL}/api/products/${company}`);
     return response.data;
   } catch (e) {
     if (axios.isCancel(e)) {
