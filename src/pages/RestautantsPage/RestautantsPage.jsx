@@ -1,4 +1,3 @@
-import { Button } from '../../components/Button/Button';
 import { RestaurantsList } from '../../components/RestaurantsList/RestaurantsList';
 import {
   Container,

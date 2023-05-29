@@ -52,9 +52,9 @@ const RegistrationPage = () => {
       address: '',
     },
     validationSchema: RegisterSchema,
-    onSubmit: values => {
-      console.log(values);
+    onSubmit: (values, { resetForm }) => {
       fetchSignup(values);
+      resetForm({ name: '', email: '', password: '', phone: '', address: '' });
     },
   });
 

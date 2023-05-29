@@ -1,6 +1,9 @@
 import * as Yup from 'yup';
 import { useFormik } from 'formik';
 
+import { useGlobal } from '../../GlobalContext';
+import { fetchLogin } from '../../helpers/fetchAPI';
+
 import { AuthLayout } from 'components/AuthLayout/AuthLayout';
 import { Button } from '../../components/Button/Button';
 import {
@@ -12,6 +15,8 @@ import {
 } from './LoginPage.styled';
 
 const LoginPage = () => {
+  const { logIn } = useGlobal();
+
   const LoginSchema = Yup.object().shape({
     email: Yup.string()
       .matches(/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/, {
@@ -30,13 +35,14 @@ const LoginPage = () => {
 
   const formik = useFormik({
     initialValues: {
-      email: '',
-      password: '',
+      email: 'abba@baab.com',
+      password: 'qwe12345',
     },
     validationSchema: LoginSchema,
-    onSubmit: values => {
-      console.log(values);
-      // fetchSignup(values);
+    onSubmit: async values => {
+      const { _id, name, email, phone, address, refresh_token } =
+        await fetchLogin(values);
+      logIn(_id, name, email, phone, address, refresh_token);
     },
   });
   return (

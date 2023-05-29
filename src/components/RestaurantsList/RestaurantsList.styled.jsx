@@ -9,7 +9,7 @@ export const List = styled.ul`
 export const ListItem = styled.li`
   > button {
     :active {
-      color: red;
+      background-color: red;
     }
   }
 `;
