@@ -1,30 +1,34 @@
 {
   "files": {
     "main.css": "/delivery-app-frontend/static/css/main.7ce2a142.css",
-    "main.js": "/delivery-app-frontend/static/js/main.dcb936b9.js",
+    "main.js": "/delivery-app-frontend/static/js/main.7cef79b5.js",
     "static/js/589.b84556e4.chunk.js": "/delivery-app-frontend/static/js/589.b84556e4.chunk.js",
     "static/js/602.932ba6bc.chunk.js": "/delivery-app-frontend/static/js/602.932ba6bc.chunk.js",
-    "static/js/530.8d045bab.chunk.js": "/delivery-app-frontend/static/js/530.8d045bab.chunk.js",
-    "static/js/12.3b551655.chunk.js": "/delivery-app-frontend/static/js/12.3b551655.chunk.js",
-    "static/js/201.06e9269e.chunk.js": "/delivery-app-frontend/static/js/201.06e9269e.chunk.js",
+    "static/js/530.b8d55399.chunk.js": "/delivery-app-frontend/static/js/530.b8d55399.chunk.js",
+    "static/js/535.ed2dbcbb.chunk.js": "/delivery-app-frontend/static/js/535.ed2dbcbb.chunk.js",
+    "static/js/453.8b03c88d.chunk.js": "/delivery-app-frontend/static/js/453.8b03c88d.chunk.js",
     "static/js/568.67b0d8f1.chunk.js": "/delivery-app-frontend/static/js/568.67b0d8f1.chunk.js",
     "static/media/register@2x.png": "/delivery-app-frontend/static/media/register@2x.068e567d3cc43e7ab7de.png",
     "static/media/login@2x.png": "/delivery-app-frontend/static/media/login@2x.388a8a353f5ccf10b414.png",
+    "static/media/empty_cart@2x.png": "/delivery-app-frontend/static/media/empty_cart@2x.11408071c6df2f81b62b.png",
+    "static/media/orders@2x.png": "/delivery-app-frontend/static/media/orders@2x.b00457f717c2ba1dfbdf.png",
     "static/media/register.png": "/delivery-app-frontend/static/media/register.2fe4e87a18bf9f2ff00d.png",
     "static/media/login.png": "/delivery-app-frontend/static/media/login.3ada27b7817b31bff3ef.png",
     "static/media/LilitaOne-Regular.ttf": "/delivery-app-frontend/static/media/LilitaOne-Regular.6f506507b06161b73e85.ttf",
+    "static/media/empty_cart.png": "/delivery-app-frontend/static/media/empty_cart.dd5837171e96a624ffa8.png",
+    "static/media/orders.png": "/delivery-app-frontend/static/media/orders.e2d81711a53d339973de.png",
     "index.html": "/delivery-app-frontend/index.html",
     "main.7ce2a142.css.map": "/delivery-app-frontend/static/css/main.7ce2a142.css.map",
-    "main.dcb936b9.js.map": "/delivery-app-frontend/static/js/main.dcb936b9.js.map",
+    "main.7cef79b5.js.map": "/delivery-app-frontend/static/js/main.7cef79b5.js.map",
     "589.b84556e4.chunk.js.map": "/delivery-app-frontend/static/js/589.b84556e4.chunk.js.map",
     "602.932ba6bc.chunk.js.map": "/delivery-app-frontend/static/js/602.932ba6bc.chunk.js.map",
-    "530.8d045bab.chunk.js.map": "/delivery-app-frontend/static/js/530.8d045bab.chunk.js.map",
-    "12.3b551655.chunk.js.map": "/delivery-app-frontend/static/js/12.3b551655.chunk.js.map",
-    "201.06e9269e.chunk.js.map": "/delivery-app-frontend/static/js/201.06e9269e.chunk.js.map",
+    "530.b8d55399.chunk.js.map": "/delivery-app-frontend/static/js/530.b8d55399.chunk.js.map",
+    "535.ed2dbcbb.chunk.js.map": "/delivery-app-frontend/static/js/535.ed2dbcbb.chunk.js.map",
+    "453.8b03c88d.chunk.js.map": "/delivery-app-frontend/static/js/453.8b03c88d.chunk.js.map",
     "568.67b0d8f1.chunk.js.map": "/delivery-app-frontend/static/js/568.67b0d8f1.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7ce2a142.css",
-    "static/js/main.dcb936b9.js"
+    "static/js/main.7cef79b5.js"
   ]
 }
