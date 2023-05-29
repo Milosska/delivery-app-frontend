@@ -35,7 +35,7 @@ const RegistrationPage = () => {
       })
       .required('Required'),
     phone: Yup.string()
-      .matches(/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/, {
+      .matches(/^([+]?[\s0-9]+)?(\d{3}|[(]?[0-9]+[)])?([-]?[\s]?[0-9])+$/, {
         message: 'Invalid phone',
         excludeEmptyString: true,
       })
