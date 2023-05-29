@@ -31,17 +31,19 @@ export const App = () => {
     JSON.parse(localStorage.getItem('current_order')) || []
   );
 
-  console.log(currentOrder);
-
   const { token, logIn } = useGlobal();
 
   useEffect(() => {
     const refreshUser = async () => {
       if (token) {
         setIsRefreshingUser(true);
-        const { _id, name, email, phone, address, refresh_token } =
-          await fetchCurrentUser(token);
-        logIn(_id, name, email, phone, address, refresh_token);
+        try {
+          const { _id, name, email, phone, address, refresh_token } =
+            await fetchCurrentUser(token);
+          logIn(_id, name, email, phone, address, refresh_token);
+        } catch (e) {
+          console.log(e);
+        }
         setIsRefreshingUser(false);
       } else {
         return <Navigate to="/login" replace />;
@@ -79,7 +81,12 @@ export const App = () => {
                 path="cart"
                 element={
                   <PrivateRoute
-                    component={<ShoppingCartPage currentOrder={currentOrder} />}
+                    component={
+                      <ShoppingCartPage
+                        currentOrder={currentOrder}
+                        setCurrentOrder={setCurrentOrder}
+                      />
+                    }
                   />
                 }
               />

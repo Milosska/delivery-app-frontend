@@ -87,3 +87,16 @@ export const fetchProductsByCompany = async company => {
     console.error(e);
   }
 };
+
+export const fetchOrders = async () => {
+  try {
+    const response = await axios.get(`${BASE_URL}/api/orders`);
+    return response.data;
+  } catch (e) {
+    if (axios.isCancel(e)) {
+      return;
+    }
+    toast.error(e.message);
+    console.error(e);
+  }
+};

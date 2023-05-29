@@ -38,7 +38,7 @@ export const InfoThumb = styled.div`
   > p {
     text-align: left;
     :not(:last-child) {
-      margin-bottom: 15px;
+      margin-bottom: 10px;
     }
     :last-child {
       color: red;
