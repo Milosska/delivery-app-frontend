@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkdelivery_app_frontend=self.webpackChunkdelivery_app_frontend||[]).push([[589],{589:function(e,n,r){r.r(n);var t=r(184);n.default=function(){return(0,t.jsx)(t.Fragment,{children:"RestaurantsPage"})}}}]);
-//# sourceMappingURL=589.e6654bd1.chunk.js.map

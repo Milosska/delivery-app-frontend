@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkdelivery_app_frontend=self.webpackChunkdelivery_app_frontend||[]).push([[201],{201:function(e,n,r){r.r(n);var t=r(184);n.default=function(){return(0,t.jsx)(t.Fragment,{children:"OrdersPage"})}}}]);
-//# sourceMappingURL=201.11f9f48f.chunk.js.map

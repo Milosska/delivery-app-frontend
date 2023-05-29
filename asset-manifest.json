@@ -1,24 +1,30 @@
 {
   "files": {
     "main.css": "/delivery-app-frontend/static/css/main.7ce2a142.css",
-    "main.js": "/delivery-app-frontend/static/js/main.3eb3032f.js",
-    "static/js/664.6d6107ee.chunk.js": "/delivery-app-frontend/static/js/664.6d6107ee.chunk.js",
-    "static/js/974.de3dd236.chunk.js": "/delivery-app-frontend/static/js/974.de3dd236.chunk.js",
-    "static/js/589.e6654bd1.chunk.js": "/delivery-app-frontend/static/js/589.e6654bd1.chunk.js",
-    "static/js/60.94e85e11.chunk.js": "/delivery-app-frontend/static/js/60.94e85e11.chunk.js",
-    "static/js/201.11f9f48f.chunk.js": "/delivery-app-frontend/static/js/201.11f9f48f.chunk.js",
+    "main.js": "/delivery-app-frontend/static/js/main.48d9c72e.js",
+    "static/js/589.b84556e4.chunk.js": "/delivery-app-frontend/static/js/589.b84556e4.chunk.js",
+    "static/js/602.932ba6bc.chunk.js": "/delivery-app-frontend/static/js/602.932ba6bc.chunk.js",
+    "static/js/530.149a01d7.chunk.js": "/delivery-app-frontend/static/js/530.149a01d7.chunk.js",
+    "static/js/60.cb6a838b.chunk.js": "/delivery-app-frontend/static/js/60.cb6a838b.chunk.js",
+    "static/js/201.06e9269e.chunk.js": "/delivery-app-frontend/static/js/201.06e9269e.chunk.js",
+    "static/js/568.67b0d8f1.chunk.js": "/delivery-app-frontend/static/js/568.67b0d8f1.chunk.js",
+    "static/media/register@2x.png": "/delivery-app-frontend/static/media/register@2x.068e567d3cc43e7ab7de.png",
+    "static/media/login@2x.png": "/delivery-app-frontend/static/media/login@2x.388a8a353f5ccf10b414.png",
+    "static/media/register.png": "/delivery-app-frontend/static/media/register.2fe4e87a18bf9f2ff00d.png",
+    "static/media/login.png": "/delivery-app-frontend/static/media/login.3ada27b7817b31bff3ef.png",
     "static/media/LilitaOne-Regular.ttf": "/delivery-app-frontend/static/media/LilitaOne-Regular.6f506507b06161b73e85.ttf",
     "index.html": "/delivery-app-frontend/index.html",
     "main.7ce2a142.css.map": "/delivery-app-frontend/static/css/main.7ce2a142.css.map",
-    "main.3eb3032f.js.map": "/delivery-app-frontend/static/js/main.3eb3032f.js.map",
-    "664.6d6107ee.chunk.js.map": "/delivery-app-frontend/static/js/664.6d6107ee.chunk.js.map",
-    "974.de3dd236.chunk.js.map": "/delivery-app-frontend/static/js/974.de3dd236.chunk.js.map",
-    "589.e6654bd1.chunk.js.map": "/delivery-app-frontend/static/js/589.e6654bd1.chunk.js.map",
-    "60.94e85e11.chunk.js.map": "/delivery-app-frontend/static/js/60.94e85e11.chunk.js.map",
-    "201.11f9f48f.chunk.js.map": "/delivery-app-frontend/static/js/201.11f9f48f.chunk.js.map"
+    "main.48d9c72e.js.map": "/delivery-app-frontend/static/js/main.48d9c72e.js.map",
+    "589.b84556e4.chunk.js.map": "/delivery-app-frontend/static/js/589.b84556e4.chunk.js.map",
+    "602.932ba6bc.chunk.js.map": "/delivery-app-frontend/static/js/602.932ba6bc.chunk.js.map",
+    "530.149a01d7.chunk.js.map": "/delivery-app-frontend/static/js/530.149a01d7.chunk.js.map",
+    "60.cb6a838b.chunk.js.map": "/delivery-app-frontend/static/js/60.cb6a838b.chunk.js.map",
+    "201.06e9269e.chunk.js.map": "/delivery-app-frontend/static/js/201.06e9269e.chunk.js.map",
+    "568.67b0d8f1.chunk.js.map": "/delivery-app-frontend/static/js/568.67b0d8f1.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7ce2a142.css",
-    "static/js/main.3eb3032f.js"
+    "static/js/main.48d9c72e.js"
   ]
 }
