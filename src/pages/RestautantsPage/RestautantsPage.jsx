@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { RestaurantsList } from '../../components/RestaurantsList/RestaurantsList';
 import { ProductCard } from '../../components/ProductCard/ProductCard';
 import {
@@ -7,8 +7,6 @@ import {
   SmallColumn,
   ProductsList,
 } from './RestautantsPage.styled';
-
-import { useGlobal } from '../../GlobalContext';
 
 const RestaurantsPage = () => {
   const [products, setProducts] = useState([]);
