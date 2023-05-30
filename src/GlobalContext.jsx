@@ -49,6 +49,7 @@ export const GlobalProvider = ({ children }) => {
         token,
         logIn,
         logOut,
+        setIsLoggedIn,
       }}
     >
       {children}
