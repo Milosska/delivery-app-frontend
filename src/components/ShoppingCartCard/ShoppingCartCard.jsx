@@ -15,16 +15,25 @@ import {
 } from './ShoppingCartCard.styled';
 
 export const ShoppingCartCard = ({
-  product: { _id, name, img, price },
+  product: { product_data },
   setCurrentOrder,
   setTotal,
 }) => {
   const [amount, setAmount] = useState(1);
   const [isDisabled, setIsDisabled] = useState(false);
+  const { product_id, name, img, price } = product_data[0];
 
   useEffect(() => {
     amount === 1 ? setIsDisabled(true) : setIsDisabled(false);
-  }, [amount]);
+
+    setCurrentOrder(prevState =>
+      prevState.map(item =>
+        item.product_data[0].product_id === product_id
+          ? { ...item, quantity: amount }
+          : item
+      )
+    );
+  }, [amount, setCurrentOrder, product_id]);
 
   const handleIncrement = () => {
     setAmount(prevState => prevState + 1);
@@ -36,7 +45,9 @@ export const ShoppingCartCard = ({
   };
 
   const handleDelete = () => {
-    setCurrentOrder(prevState => prevState.filter(item => item._id !== _id));
+    setCurrentOrder(prevState =>
+      prevState.filter(item => item.product_data[0].product_id !== product_id)
+    );
   };
 
   return (

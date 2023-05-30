@@ -70,7 +70,7 @@ export const fetchCurrentUser = async userToken => {
     if (axios.isCancel(e)) {
       return;
     }
-    toast.error(e.message);
+    // toast.error(e.message);
     console.error(e);
   }
 };
@@ -91,6 +91,20 @@ export const fetchProductsByCompany = async company => {
 export const fetchOrders = async () => {
   try {
     const response = await axios.get(`${BASE_URL}/api/orders`);
+    return response.data;
+  } catch (e) {
+    if (axios.isCancel(e)) {
+      return;
+    }
+    toast.error(e.message);
+    console.error(e);
+  }
+};
+
+export const fetchAddOrder = async orderData => {
+  try {
+    const response = await axios.post(`${BASE_URL}/api/orders`, orderData);
+    toast.success('Order is succesfully made!');
     return response.data;
   } catch (e) {
     if (axios.isCancel(e)) {

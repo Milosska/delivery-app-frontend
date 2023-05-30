@@ -14,16 +14,25 @@ export const ProductCard = ({ product, currentOrder, setCurrentOrder }) => {
   const { _id, name, img, cuisine, ingredients, price, type } = product;
 
   useEffect(() => {
-    const inCart = currentOrder.find(item => item._id === _id);
+    const inCart = currentOrder.find(
+      item => item.product_data[0].product_id === _id
+    );
     inCart ? setIsActive(true) : setIsActive(false);
   }, [currentOrder, _id]);
 
   const handleClick = () => {
     if (!isActive) {
-      setCurrentOrder(prevState => [...prevState, product]);
+      setCurrentOrder(prevState => [
+        ...prevState,
+        {
+          product_data: [{ product_id: _id, name, img, price }],
+        },
+      ]);
       setIsActive(true);
     } else {
-      setCurrentOrder(prevState => prevState.filter(item => item._id !== _id));
+      setCurrentOrder(prevState =>
+        prevState.filter(item => item.product_data[0].product_id !== _id)
+      );
       setIsActive(false);
     }
   };

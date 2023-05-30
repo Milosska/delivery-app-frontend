@@ -1,6 +1,7 @@
 import * as Yup from 'yup';
 import { useFormik } from 'formik';
 import { useGlobal } from '../../GlobalContext';
+import { fetchAddOrder } from '../../helpers/fetchAPI';
 import {
   FormContainer,
   FormTitle,
@@ -11,7 +12,7 @@ import {
   InputErrorMessage,
 } from './OrderForm.styled';
 
-export const OrderForm = ({ total }) => {
+export const OrderForm = ({ total, currentOrder }) => {
   const { phone: userPhone, address: userAddress } = useGlobal();
 
   const RegisterSchema = Yup.object().shape({
@@ -31,11 +32,31 @@ export const OrderForm = ({ total }) => {
     },
     validationSchema: RegisterSchema,
     onSubmit: (values, { resetForm }) => {
-      console.log(values);
+      const correctedProductData = currentOrder.map(
+        ({ product_data, quantity }) => ({
+          product_data: [
+            {
+              product_id: product_data[0].product_id,
+              name: product_data[0].name,
+              img: product_data[0].img,
+            },
+          ],
+          quantity,
+        })
+      );
+
+      const formedOrder = {
+        products: [...correctedProductData],
+        delivery_data: values,
+        total_price: total,
+      };
+      fetchAddOrder(formedOrder);
+      // console.log(formedOrder);
       resetForm({ phone: '', address: '' });
     },
   });
 
+  // [{ product_data: [{product_id: '', name: '', img: '', price: ''}], quantity: 1 }];
   return (
     <FormContainer onSubmit={formik.handleSubmit}>
       <FormTitle>Set my delivery data</FormTitle>

@@ -15,18 +15,16 @@ import {
 
 const ShoppingCartPage = ({ currentOrder, setCurrentOrder }) => {
   const [total, setTotal] = useState(0);
-  const [totalDeliveryOrder, setTotalDeliveryOrder] = useState([]);
-  console.log(totalDeliveryOrder);
 
   useEffect(() => {
-    const prices = currentOrder.map(item => item.price);
+    const prices = currentOrder.map(item => item.product_data[0].price);
     setTotal(prices.reduce((prev, elem) => prev + elem, 0));
   }, [currentOrder]);
 
   return (
     <Container>
       <SmallColumn>
-        <OrderForm total={total} />
+        <OrderForm total={total} currentOrder={currentOrder} />
       </SmallColumn>
       <BigColumn>
         {currentOrder.length > 0 ? (
@@ -34,13 +32,11 @@ const ShoppingCartPage = ({ currentOrder, setCurrentOrder }) => {
             <ProductsList>
               {currentOrder.map(product => {
                 return (
-                  <li key={product._id}>
+                  <li key={product.product_data[0].product_id}>
                     <ShoppingCartCard
                       product={product}
                       setCurrentOrder={setCurrentOrder}
                       setTotal={setTotal}
-                      totalDeliveryOrder={totalDeliveryOrder}
-                      setTotalDeliveryOrder={setTotalDeliveryOrder}
                     />
                   </li>
                 );
