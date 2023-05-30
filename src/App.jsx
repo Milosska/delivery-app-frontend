@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { GlobalStyles } from './GlobalStyles';
 
 import { lazy, Suspense, useState, useEffect } from 'react';
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import { fetchCurrentUser } from './helpers/fetchAPI';
 import { useGlobal } from './GlobalContext';
@@ -31,7 +31,7 @@ export const App = () => {
     JSON.parse(localStorage.getItem('current_order')) || []
   );
 
-  const { token, logIn } = useGlobal();
+  const { token, logIn, logOut } = useGlobal();
 
   useEffect(() => {
     const refreshUser = async () => {
@@ -46,12 +46,12 @@ export const App = () => {
         }
         setIsRefreshingUser(false);
       } else {
-        return <Navigate to="/login" replace />;
+        logOut();
       }
     };
 
     refreshUser();
-  }, [token, logIn]);
+  }, [token, logIn, logOut]);
 
   useEffect(() => {
     localStorage.setItem('current_order', JSON.stringify(currentOrder));

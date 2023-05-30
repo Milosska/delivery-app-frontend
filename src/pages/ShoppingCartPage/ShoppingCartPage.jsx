@@ -24,7 +24,11 @@ const ShoppingCartPage = ({ currentOrder, setCurrentOrder }) => {
   return (
     <Container>
       <SmallColumn>
-        <OrderForm total={total} currentOrder={currentOrder} />
+        <OrderForm
+          total={total}
+          currentOrder={currentOrder}
+          setCurrentOrder={setCurrentOrder}
+        />
       </SmallColumn>
       <BigColumn>
         {currentOrder.length > 0 ? (

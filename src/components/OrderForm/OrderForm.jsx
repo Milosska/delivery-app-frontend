@@ -12,7 +12,7 @@ import {
   InputErrorMessage,
 } from './OrderForm.styled';
 
-export const OrderForm = ({ total, currentOrder }) => {
+export const OrderForm = ({ total, currentOrder, setCurrentOrder }) => {
   const { phone: userPhone, address: userAddress } = useGlobal();
 
   const RegisterSchema = Yup.object().shape({
@@ -51,7 +51,7 @@ export const OrderForm = ({ total, currentOrder }) => {
         total_price: total,
       };
       fetchAddOrder(formedOrder);
-      // console.log(formedOrder);
+      setCurrentOrder([]);
       resetForm({ phone: '', address: '' });
     },
   });
