@@ -10,12 +10,12 @@ export const Container = styled.div`
 
 export const BigColumn = styled.div`
   flex: 2;
-  padding: 10px;
+  padding: 20px 10px;
 `;
 
 export const SmallColumn = styled.div`
   flex: 1;
-  padding: 10px;
+  padding: 20px 10px;
 `;
 
 export const ProductsList = styled.ul`
@@ -23,7 +23,7 @@ export const ProductsList = styled.ul`
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
-  padding: 20px 0;
+  padding-bottom: 20px;
 `;
 
 export const MakeOrderThumb = styled.div`

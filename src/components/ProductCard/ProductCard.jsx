@@ -14,6 +14,10 @@ export const ProductCard = ({ product, currentOrder, setCurrentOrder }) => {
   const { _id, name, img, cuisine, ingredients, price, type } = product;
 
   useEffect(() => {
+    if (!currentOrder) {
+      return;
+    }
+
     const inCart = currentOrder.find(
       item => item.product_data[0].product_id === _id
     );

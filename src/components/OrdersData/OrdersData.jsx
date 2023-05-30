@@ -14,8 +14,11 @@ export const OrdersData = ({
     total_price,
     delivery_data: { address },
     products,
+    createdAt,
   },
 }) => {
+  const orderDate = new Date(createdAt).toLocaleDateString();
+
   return (
     <Container>
       <BaseInfoThumb>
@@ -31,7 +34,7 @@ export const OrdersData = ({
         </OrderInfoThumb>
         <OrderDataThumb>
           <p>
-            <TextLabel>Date:</TextLabel>
+            <TextLabel>Date: {orderDate}</TextLabel>
           </p>
           <p>
             <TextLabel>Total price: </TextLabel>
