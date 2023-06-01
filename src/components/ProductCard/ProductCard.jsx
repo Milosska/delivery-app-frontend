@@ -14,14 +14,12 @@ export const ProductCard = ({ product, currentOrder, setCurrentOrder }) => {
   const { _id, name, img, cuisine, ingredients, price, type } = product;
 
   useEffect(() => {
-    if (!currentOrder || currentOrder.length === 0) {
-      return;
+    if (currentOrder.length > 0) {
+      const inCart = currentOrder.find(
+        item => item.product_data[0].product_id === _id
+      );
+      inCart ? setIsActive(true) : setIsActive(false);
     }
-
-    const inCart = currentOrder.find(
-      item => item.product_data[0].product_id === _id
-    );
-    inCart ? setIsActive(true) : setIsActive(false);
   }, [currentOrder, _id]);
 
   const handleClick = () => {
