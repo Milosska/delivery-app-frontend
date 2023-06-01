@@ -14,7 +14,7 @@ export const ProductCard = ({ product, currentOrder, setCurrentOrder }) => {
   const { _id, name, img, cuisine, ingredients, price, type } = product;
 
   useEffect(() => {
-    if (!currentOrder) {
+    if (!currentOrder || currentOrder === []) {
       return;
     }
 
